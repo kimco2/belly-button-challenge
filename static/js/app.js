@@ -14,9 +14,10 @@ function buildBubbleChart(sampleID){
           mode: 'markers',
           marker: {
             color: firstElement['otu_ids'],
-            size: firstElement['sample_values']
+            size: firstElement['sample_values'],
             // add color scale here to match coloros
-            //colorscale: "colorscale"
+            // colorscale: "colorscale"
+            colorscale: "Portland"
           }
        }; 
       let bubbleData = [bubbleTrace1]
