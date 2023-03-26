@@ -77,17 +77,18 @@ function buildBarChart(sampleId) {
 // Build the meta data panel
 // ----------------------------------------
 function buildMetaData(sampleID) {
-  let panel = d3.select("#sample-metadata");  
+    // Selecting the panel body via the id 'sample metadata'
+  let panel = d3.select("#sample-metadata");
   // Reading the JSON url
   d3.json(url).then((data) => {
     // Getting the 'metadata' data from the json file
     let metaData = data.metadata;
     // Filtering the data to just one ID
-    let dataMeta = metaData.filter(object=>object.id=sampleID);
+    let dataMeta = metaData.filter(object=>object.id==sampleID);
     let firstElement = dataMeta[0];
     // Clearing any data out of the panel
     panel.html('');
-    console.log(firstElement)
+    // Appending the value pairs to the panel
     for (key in firstElement){
       panel.append("h6").text(`${key}: ${firstElement[key]}`);
     };
@@ -95,21 +96,25 @@ function buildMetaData(sampleID) {
 
     
 // ----------------------------------------
-// Function for what happens when the webpage inititally opens.  
+// Function for when webpage is initialised
 // This includes the drop down selector and setting the inital charts to show data from id '940'.
 // ----------------------------------------
   function init(){
-    // Setting up the select drop down
+    // Selecting the drop down component
     let selector = d3.select("#selDataset");
+    // Reading the JSON url
     d3.json(url).then((data) => {
+      // Getting the 'names' from the json file
       let sampleNames = data.names
+      // Adding all the names to the drop down component and assigning their name as the value
       for (let i = 0; i < sampleNames.length; i++)
-      {      selector
-                 .append("option")
+          {selector
+                .append("option")
                 .text(sampleNames[i])
                 .property("value", sampleNames[i]);
        };
-       // Show initital charts using the data from id 940
+
+      //  Show initital charts using the data from id 940
        buildBarChart("940");
        buildBubbleChart("940");
        buildMetaData("940");
