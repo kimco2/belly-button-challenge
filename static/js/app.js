@@ -107,7 +107,7 @@ function buildMetaData(sampleID) {
     // Reading the JSON url
     d3.json(url).then((data) => {
       // Getting the 'names' from the json file
-      let sampleNames = data.names
+      let sampleNames = data.names;
       // Adding all the names to the drop down component and assigning their name as the value
       for (let i = 0; i < sampleNames.length; i++)
           {selector
