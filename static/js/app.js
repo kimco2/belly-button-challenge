@@ -16,6 +16,7 @@ function buildBubbleChart(sampleID){
     let bubbleTrace1 = {
           x: firstElement['otu_ids'] ,
           y: firstElement['sample_values'],
+          text: firstElement['otu_labels'],
           mode: 'markers',
           marker: {
             color: firstElement['otu_ids'],
@@ -27,10 +28,11 @@ function buildBubbleChart(sampleID){
       // Create data array
       let bubbleData = [bubbleTrace1]
     
-    // Apply x axis title to the layout
-    let layout = {
+      // Apply x axis title to the layout
+      let layout = {
         xaxis: {title: 'OTU ID'}
-    };
+      };
+
       // Invoke the plotting function and render the plot to the div id "bubble"
       Plotly.newPlot('bubble', bubbleData, layout);     
 
