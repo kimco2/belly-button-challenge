@@ -30,7 +30,7 @@ function buildBubbleChart(sampleID){
     
       // Apply x axis title to the layout
       let layout = {
-        xaxis: {title: `OTU ID`}
+        xaxis: {title: 'OTU ID'}
       };
 
       // Invoke the plotting function and render the plot to the div id "bubble"
