@@ -30,7 +30,7 @@ function buildBubbleChart(sampleID){
     
       // Apply x axis title to the layout
       let layout = {
-        xaxis: {title: 'OTU ID'}
+        xaxis: {title: `OTU ID`}
       };
 
       // Invoke the plotting function and render the plot to the div id "bubble"
@@ -79,7 +79,7 @@ function buildBarChart(sampleId) {
 // Build the meta data panel
 // ----------------------------------------
 function buildMetaData(sampleID) {
-    // Selecting the panel body via the id 'sample metadata'
+  // Selecting the panel body via the id 'sample metadata'
   let panel = d3.select("#sample-metadata");
   // Reading the JSON url
   d3.json(url).then((data) => {
@@ -90,7 +90,7 @@ function buildMetaData(sampleID) {
     let firstElement = dataMeta[0];
     // Clearing any data out of the panel
     panel.html('');
-    // Appending the value pairs to the panel
+    // Appending the key value pairs to the panel
     for (key in firstElement){
       panel.append("h6").text(`${key}: ${firstElement[key]}`);
     };
@@ -126,10 +126,10 @@ function buildMetaData(sampleID) {
 // ----------------------------------------
 // Function that updates the charts and metadata when a different ID is selected
 // ----------------------------------------
-function optionChanged(newSample){
-  buildBarChart(newSample);
-  buildBubbleChart(newSample);
-  buildMetaData(newSample);
+function optionChanged(newSelect){
+  buildBarChart(newSelect);
+  buildBubbleChart(newSelect);
+  buildMetaData(newSelect);
 };
 
 init();
