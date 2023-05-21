@@ -1,14 +1,21 @@
-# belly-button-challenge
+# Interactive dashboard on belly button biodiversity
 
-## Hello, this is the repository for module 14 belly-button challenge.
-
--The folder **static** contains:
- - '**app.js**' - the code for the assignment.
+## **Overview**
+Built an interactive dashboard to explore the [belly button biodiversity data set](http://robdunnlab.com/projects/belly-button-biodiversity/) that catalogues the microbes that colonise human bully buttons!
  
--The app has also been deployed to Github Pages
- - This is can be accessed via this repository or via the link https://kimco2.github.io/belly-button-challenge/
+![belly_button_dashboard](belly_button_dashboard.png)
+
+---
+
+### **Contact:**
+Email: kymcoleman@gmail.com
 
 
-Thanks
+---
+<br/>
 
-Kim
+***Folder structure***
+
+- The main folder contains the html code **index.html** <br/>
+- The folder **static** contains the dashboard code **app.js** 
+- The app has been deployed to Github Pages, which can be accessed via this [link](https://kimco2.github.io/belly-button-challenge/)
